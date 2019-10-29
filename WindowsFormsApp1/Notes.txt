@@ -1,0 +1,27 @@
+We have a simple web service that exposes some dummy people data (id, name, age, number, photo, bio).
+The goal is to make an app that consumes this service and displays the 5 youngest users with valid us 
+telephone numbers sorted by name.
+The UI for displaying the results is up to you --- this is a backend project so we don’t worry too much about the UI.
+You can use any third party packages / plugins / frameworks you like, and contact us with any questions.
+We are interested in the cleanness of code design and implementation.
+For “extra credit”, describe a way to automatically test the app and how the design of the end-to-end 
+service + app should change if the dataset were three orders of magnitude larger. Thanks.
+
+Service Endpoint
+https://appsheettest1.azurewebsites.net/sample/
+
+method
+list
+
+notes
+This method will return an array of up to 10 user id's.  
+If there are more than 10 results the response will also contain a token that can be used to 
+retrieve the next set of results.  This optional token can be passed as a query string parameter
+ex https://appsheettest1.azurewebsites.net/sample/list or https://appsheettest1.azurewebsites.net/sample/list?token=b32b3
+
+method
+detail/{user id}
+
+notes
+This method will returns the full details for a given user 
+ex http://appsheettest1.azurewebsites.net/sample/detail/21
