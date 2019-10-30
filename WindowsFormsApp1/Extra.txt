@@ -1,0 +1,11 @@
+describe a way to automatically test the app
+
+The webservice calls should be translated into class methods in order to create 'fakes'.
+Interesting and edge case data sets could then be introduced thru the webservice class methods when running the end-to-end tests.
+
+
+how the design of the end-to-end service + app should change if the dataset were three orders of magnitude larger
+
+The end-to-end service could serve up a sorted list via a stored procedure; therefore minimal processing on the app side would be required.
+The app: Since the webservice calls appear to be the 'long pole', the calls should be parallelized thru multi-threading.
+The coalescing of the data would then need to employ a mutex.
